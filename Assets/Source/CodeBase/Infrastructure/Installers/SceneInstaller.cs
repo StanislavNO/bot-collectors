@@ -1,10 +1,11 @@
+using System.Collections.Generic;
 using Source.CodeBase.Controllers;
 using Source.CodeBase.GameData;
 using Source.CodeBase.GameplayModels.Bot;
 using Source.CodeBase.GameplayModels.Bot.BotFSM;
+using Source.CodeBase.GameplayModels.GameplayResources;
 using Source.CodeBase.Infrastructure.Services.Factories;
 using Source.CodeBase.View;
-using UnityEditor;
 using UnityEngine;
 using Zenject;
 
@@ -12,6 +13,7 @@ namespace Source.CodeBase.Infrastructure.Installers
 {
     public class SceneInstaller : MonoInstaller
     {
+        [SerializeField] private List<Resource> _startResources;
         [SerializeField] private StartPanel _startPanel;
         [SerializeField] private HeadUpDisplay _headUpDisplay;
         [SerializeField] private Map _map;
@@ -40,6 +42,7 @@ namespace Source.CodeBase.Infrastructure.Installers
         private void BindEnvironment()
         {
             Container.BindInstance(_map).AsSingle();
+            Container.BindInstance(_startResources).AsSingle();
         }
 
         private void BindData()

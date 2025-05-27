@@ -43,7 +43,8 @@ namespace Source.CodeBase.Controllers
         private void Spawn(Vector3 spawnPosition, int count, Material fraction)
         {
             List<CollectorBot> bots = _botFactory.Get(count, fraction);
-
+            var offset = 2;
+            
             foreach (var bot in bots)
             {
                 bot.transform.position = spawnPosition;
@@ -51,7 +52,7 @@ namespace Source.CodeBase.Controllers
                 var newPosition = new Vector3(
                     spawnPosition.x,
                     spawnPosition.y,
-                    spawnPosition.z) + Vector3.forward;
+                    spawnPosition.z) + Vector3.back * offset;
 
                 spawnPosition = newPosition;
                 bot.gameObject.SetActive(true);
