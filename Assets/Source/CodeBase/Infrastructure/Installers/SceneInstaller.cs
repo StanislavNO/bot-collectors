@@ -3,6 +3,7 @@ using Source.CodeBase.Controllers;
 using Source.CodeBase.GameData;
 using Source.CodeBase.GameplayModels.Bot;
 using Source.CodeBase.GameplayModels.Bot.BotFSM;
+using Source.CodeBase.GameplayModels.Camera;
 using Source.CodeBase.GameplayModels.GameplayResources;
 using Source.CodeBase.Infrastructure.Services.Factories;
 using Source.CodeBase.View;
@@ -17,9 +18,12 @@ namespace Source.CodeBase.Infrastructure.Installers
         [SerializeField] private StartPanel _startPanel;
         [SerializeField] private HeadUpDisplay _headUpDisplay;
         [SerializeField] private Map _map;
+        [SerializeField] private CameraBotFollower _cameraBotFollower;
 
         public override void InstallBindings()
         {
+            BindCamera();
+            BindScore();
             BindView();
             BindEnvironment();
             BindData();
@@ -27,6 +31,17 @@ namespace Source.CodeBase.Infrastructure.Installers
             BindFactories();
             BindBotFSM();
             BindControllers();
+        }
+
+        private void BindCamera()
+        {
+            Container.BindInstance(_cameraBotFollower).AsSingle();
+            Container.BindInterfacesTo<BotCameraSetter>().AsSingle().NonLazy();
+        }
+
+        private void BindScore()
+        {
+            Container.BindInterfacesAndSelfTo<Score>().AsSingle();
         }
 
         private void BindBotMediator()
