@@ -1403,6 +1403,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 358832785}
   m_CullTransparentMesh: 1
+--- !u!4 &391899002 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2402152595036453928, guid: 8b03abf5e71c54cbcae33dcf135cbcb1, type: 3}
+  m_PrefabInstance: {fileID: 1204288794}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &441126887
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1894,6 +1899,11 @@ MonoBehaviour:
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 0
   m_AffectedAgents: 
+--- !u!4 &539994255 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2402152595036453928, guid: 8b03abf5e71c54cbcae33dcf135cbcb1, type: 3}
+  m_PrefabInstance: {fileID: 1921000165}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &549363202
 GameObject:
   m_ObjectHideFlags: 0
@@ -1991,6 +2001,8 @@ Transform:
   - {fileID: 518410271}
   - {fileID: 294130367}
   - {fileID: 1173450093}
+  - {fileID: 391899002}
+  - {fileID: 539994255}
   m_Father: {fileID: 230103614}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &549363206
@@ -3552,6 +3564,67 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &1204288794
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 549363205}
+    m_Modifications:
+    - target: {fileID: 287842546841048191, guid: 8b03abf5e71c54cbcae33dcf135cbcb1, type: 3}
+      propertyPath: m_Intensity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402152595036453928, guid: 8b03abf5e71c54cbcae33dcf135cbcb1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -27
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402152595036453928, guid: 8b03abf5e71c54cbcae33dcf135cbcb1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402152595036453928, guid: 8b03abf5e71c54cbcae33dcf135cbcb1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402152595036453928, guid: 8b03abf5e71c54cbcae33dcf135cbcb1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402152595036453928, guid: 8b03abf5e71c54cbcae33dcf135cbcb1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402152595036453928, guid: 8b03abf5e71c54cbcae33dcf135cbcb1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402152595036453928, guid: 8b03abf5e71c54cbcae33dcf135cbcb1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402152595036453928, guid: 8b03abf5e71c54cbcae33dcf135cbcb1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402152595036453928, guid: 8b03abf5e71c54cbcae33dcf135cbcb1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402152595036453928, guid: 8b03abf5e71c54cbcae33dcf135cbcb1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010093829363432435, guid: 8b03abf5e71c54cbcae33dcf135cbcb1, type: 3}
+      propertyPath: m_Name
+      value: CFXR3 Magic Aura A (Runic)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8b03abf5e71c54cbcae33dcf135cbcb1, type: 3}
 --- !u!1 &1238200752
 GameObject:
   m_ObjectHideFlags: 0
@@ -4576,7 +4649,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 194, y: 42}
+  m_AnchoredPosition: {x: 193.99976, y: 42}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1653000950
@@ -5080,6 +5153,67 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2af5562ce69fc2d448481a1587a352a5, type: 3}
+--- !u!1001 &1921000165
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 549363205}
+    m_Modifications:
+    - target: {fileID: 287842546841048191, guid: 8b03abf5e71c54cbcae33dcf135cbcb1, type: 3}
+      propertyPath: m_Intensity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402152595036453928, guid: 8b03abf5e71c54cbcae33dcf135cbcb1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402152595036453928, guid: 8b03abf5e71c54cbcae33dcf135cbcb1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402152595036453928, guid: 8b03abf5e71c54cbcae33dcf135cbcb1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402152595036453928, guid: 8b03abf5e71c54cbcae33dcf135cbcb1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402152595036453928, guid: 8b03abf5e71c54cbcae33dcf135cbcb1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402152595036453928, guid: 8b03abf5e71c54cbcae33dcf135cbcb1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402152595036453928, guid: 8b03abf5e71c54cbcae33dcf135cbcb1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402152595036453928, guid: 8b03abf5e71c54cbcae33dcf135cbcb1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402152595036453928, guid: 8b03abf5e71c54cbcae33dcf135cbcb1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402152595036453928, guid: 8b03abf5e71c54cbcae33dcf135cbcb1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010093829363432435, guid: 8b03abf5e71c54cbcae33dcf135cbcb1, type: 3}
+      propertyPath: m_Name
+      value: CFXR3 Magic Aura A (Runic) (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8b03abf5e71c54cbcae33dcf135cbcb1, type: 3}
 --- !u!1 &2050776074
 GameObject:
   m_ObjectHideFlags: 0
