@@ -5,6 +5,6 @@ namespace Source.CodeBase.Controllers
 {
     public interface IResourceFinder
     {
-        Resource FindFirstResource(Vector3 startPosition);
+        bool TryFindFirstResource(Vector3 startPosition, out Resource resource);
     }
 }

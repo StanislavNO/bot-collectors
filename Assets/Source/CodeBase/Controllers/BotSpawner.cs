@@ -6,6 +6,7 @@ using Source.CodeBase.GameplayModels.Bot;
 using Source.CodeBase.Infrastructure.Services.Factories;
 using Source.CodeBase.View;
 using UnityEngine;
+using UnityEngine.AI;
 using Zenject;
 
 namespace Source.CodeBase.Controllers
@@ -36,19 +37,20 @@ namespace Source.CodeBase.Controllers
 
         private void OnGameStarting()
         {
-            Spawn(_map.OneFractionSpawnPoint, _sessionData.BotCount, _gameSetting.OneFractionMaterial);
-            Spawn(_map.TwoFractionSpawnPoint, _sessionData.BotCount, _gameSetting.TwoFractionMaterial);
+            Spawn(_map.OneFractionSpawnPoint, _sessionData.BotCount, _gameSetting.OneFractionMaterial, _map.OneFractionSpawnPoint, Fraction.One);
+            Spawn(_map.TwoFractionSpawnPoint, _sessionData.BotCount, _gameSetting.TwoFractionMaterial, _map.TwoFractionSpawnPoint, Fraction.Two);
         }
 
-        private void Spawn(Vector3 spawnPosition, int count, Material fraction)
+        private void Spawn(Vector3 spawnPosition, int count, Material color, Vector3 homePosition, Fraction fraction)
         {
-            List<CollectorBot> bots = _botFactory.Get(count, fraction);
+            List<CollectorBot> bots = _botFactory.Get(count, color, fraction);
             var offset = 2;
             
             foreach (var bot in bots)
             {
                 bot.transform.position = spawnPosition;
-
+                bot.Data.HomePosition = homePosition;
+                
                 var newPosition = new Vector3(
                     spawnPosition.x,
                     spawnPosition.y,
