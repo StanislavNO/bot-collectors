@@ -11,5 +11,6 @@ namespace Source.CodeBase.Configs
         [field: SerializeField] public Resource Resource { get; private set; }
         [field: SerializeField] public Material OneFractionMaterial { get; private set; }
         [field: SerializeField] public Material TwoFractionMaterial { get; private set; }
+        [field: SerializeField] public ResourceSpawnSetting ResourceSpawnSetting { get; private set; }
     }
 }
