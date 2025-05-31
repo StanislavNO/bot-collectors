@@ -19,6 +19,13 @@ namespace Source.CodeBase.GameplayModels.Bot.BotFSM
         public void Init(CollectorBot collectorBot)
         {
             _states = _factory.Create(collectorBot, this);
+            
+        }
+
+        public void Enable()
+        {
+            _currentState = _states.First();
+            _currentState.Enter();
         }
 
         public void SwitchState<T>() where T : IState

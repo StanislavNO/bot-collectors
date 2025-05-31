@@ -10,24 +10,26 @@ namespace Source.CodeBase.GameplayModels.Bot.BotFSM.State
         private readonly BotMediator _mediator;
         private readonly BotData _data;
 
-        private readonly WaitForSeconds _delay = new(2);
+        private readonly float _collectionSpeed = 2f;
+        private readonly WaitForSeconds _delay;
         private Coroutine _coroutine;
 
         public CollectionState(
             IStateSwitcher switcher,
             ICoroutineRunner runner,
-            BotMediator mediator, 
+            BotMediator mediator,
             BotData data)
         {
             _switcher = switcher;
             _runner = runner;
             _mediator = mediator;
             _data = data;
+            _delay = new WaitForSeconds(_collectionSpeed);
         }
 
         public void Enter()
         {
-            _mediator.StartCollection();
+            _mediator.StartCollection(_collectionSpeed);
             _coroutine = _runner.StartCoroutine(Collection());
         }
 
@@ -44,7 +46,7 @@ namespace Source.CodeBase.GameplayModels.Bot.BotFSM.State
             _data.Target = _data.HomePosition;
             Switch();
         }
-        
+
         private void Switch() =>
             _switcher.SwitchState<MoveToTargetState>();
     }

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Source.CodeBase.Configs;
+using Source.CodeBase.GameData;
 using Source.CodeBase.GameplayModels.Bot;
 using UnityEngine;
 using Zenject;
@@ -22,11 +23,11 @@ namespace Source.CodeBase.Infrastructure.Services.Factories
             _botsParent = new GameObject("BotsContainer").transform;
         }
 
-        public List<CollectorBot> Get(int count, Material material)
+        public List<CollectorBot> Get(int count, Material material, Fraction fraction)
         {
             _prefab.gameObject.SetActive(false);
             _bots.Clear();
-            
+
             for (var i = 0; i < count; i++)
             {
                 var instance = _instantiator.InstantiatePrefab(
@@ -34,6 +35,8 @@ namespace Source.CodeBase.Infrastructure.Services.Factories
 
                 var bot = instance.GetComponent<CollectorBot>();
                 bot.SetMaterial(material);
+                bot.SetFraction(fraction);
+                
                 _bots.Add(bot);
             }
 

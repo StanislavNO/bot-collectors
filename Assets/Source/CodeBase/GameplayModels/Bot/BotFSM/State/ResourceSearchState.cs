@@ -1,5 +1,6 @@
 using System.Collections;
 using Source.CodeBase.Controllers;
+using Source.CodeBase.GameplayModels.GameplayResources;
 using UnityEngine;
 
 namespace Source.CodeBase.GameplayModels.Bot.BotFSM.State
@@ -19,12 +20,14 @@ namespace Source.CodeBase.GameplayModels.Bot.BotFSM.State
             ICoroutineRunner coroutineRunner,
             IResourceFinder resourceFinder,
             IStateSwitcher stateSwitcher,
-            BotData data)
+            BotData data,
+            BotMediator mediator)
         {
             _coroutineRunner = coroutineRunner;
             _resourceFinder = resourceFinder;
             _stateSwitcher = stateSwitcher;
             _data = data;
+            _mediator = mediator;
         }
 
         public void Enter()
@@ -41,11 +44,14 @@ namespace Source.CodeBase.GameplayModels.Bot.BotFSM.State
 
         private IEnumerator FindResource()
         {
-            var target = _resourceFinder.FindFirstResource(_data.Position);
+            Resource resource;
 
-            yield return _delay;
+            do
+            {
+                yield return _delay;
+            } while (_resourceFinder.TryFindFirstResource(_data.Position, out resource) == false);
 
-            _data.Resource = target;
+            _data.Resource = resource;
             _data.CanCollect = true;
             _data.Target = _data.Resource.Position;
 
