@@ -12,7 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff04896461b4b5fb8a32d54466a0762, type: 3}
   m_Name: Game Setting
   m_EditorClassIdentifier: 
-  <Bot>k__BackingField: {fileID: 0}
-  <Resource>k__BackingField: {fileID: 0}
-  <OneFractionMaterial>k__BackingField: {fileID: 0}
-  <TwoFractionMaterial>k__BackingField: {fileID: 0}
+  <Bot>k__BackingField: {fileID: 2446726082406917087, guid: 7e1a1f55fcfef4d7fb61f623642c6423, type: 3}
+  <Resource>k__BackingField: {fileID: 5513965944090976844, guid: 077ff7cb42eb94c4ea39f42bbd23802b, type: 3}
+  <OneFractionMaterial>k__BackingField: {fileID: 2100000, guid: 74a823558f28949939995b1dcc94f96d, type: 2}
+  <TwoFractionMaterial>k__BackingField: {fileID: 2100000, guid: c661d6616f5ec43749fcbe32da6e7ae6, type: 2}
+  <ResourceSpawnSetting>k__BackingField:
+    <SpawnRadius>k__BackingField: 2
+    <NotSpawnLayers>k__BackingField:
+      serializedVersion: 2
+      m_Bits: 72
