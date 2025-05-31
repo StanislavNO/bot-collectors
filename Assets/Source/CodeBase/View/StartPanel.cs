@@ -15,22 +15,23 @@ namespace Source.CodeBase.View
         [SerializeField] private Slider _botCounter;
         [SerializeField] private TMP_Text _botCountText;
 
-        public void Show()
+        private void OnEnable()
         {
-            gameObject.SetActive(true);
             OnPlayerBotCountChanged(_botCounter.value);
 
             _startButton.onClick.AddListener(OnPlayerStartClicked);
             _botCounter.onValueChanged.AddListener(OnPlayerBotCountChanged);
         }
 
-        public void Hide()
+        private void OnDisable()
         {
-            gameObject.SetActive(false);
-
             _startButton.onClick.RemoveListener(OnPlayerStartClicked);
             _botCounter.onValueChanged.RemoveListener(OnPlayerBotCountChanged);
         }
+
+        public void Show() => gameObject.SetActive(true);
+
+        public void Hide() => gameObject.SetActive(false);
 
         private void OnPlayerStartClicked() => OnStartClicked?.Invoke();
 
